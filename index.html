@@ -51,34 +51,41 @@
                     </div>
                     <div class="form-section">
                         <form class="form">
-                            <div class="form-q">
-                                <div class="form-time">
-                                    <label for="Sleep Time">Sleep Time: </label>
-                                    <input type="number" id="Sleep Time" name="Sleep Time">
-                                </div>
-                                <div class="form-time">
-                                    <label for="Wake-up Time">Wake-up Time: </label>
-                                    <input type="number" id="Wake-up Time" name="Wake-up time">
-                                </div>
+                            <div class="form-q form-time">
+                                <label for="Sleep Time">Sleep Time: </label>
+                                <input type="time" id="Sleep Time" name="Sleep Time">
+                            </div>
+                            <div class="form-q form-time">
+                                <label for="Wake-up Time">Wake-up Time: </label>
+                                <input type="time" id="Wake-up Time" name="Wake-up time">
+                            </div>
                             <div class="form-q">
                                 <label for="Medication">Medication? </label>
-                                <label for="yes">Y</label>
-                                <input type="checkbox" id="Medication" name="Medication">
-                                <label for="no">N</label>
-                                <input type="checkbox" id="Medication" name="Medication">
+                                <div class="form-choice">
+                                    <input type="radio" id="NoMed" name="caffeine" value="no" checked>
+                                        <label for="NoMed" class="no">No</label>
+                                    </input>
+                                    <input type="radio" id="YesMed" name="caffeine" value="yes">
+                                        <label for="YesMed" class="yes">Yes</label>
+                                    </input>
+                                </div>
                             </div>
                             <div class="form-q">
                                 <label for="Caffeine">Caffeine? </label>
-                                <label for="yes">Y</label>
-                                <input type="checkbox" id="Caffeine" name="Caffeine">
-                                <label for="no">N</label>
-                                <input type="checkbox" id="Caffeine" name="Caffeine">
+                                <div class="form-choice">
+                                    <input type="radio" id="NoCaf" name="medication" value="no" checked>
+                                        <label for="NoCaf" class="no">No</label>
+                                    </input>
+                                    <input type="radio" id="YesCaf" name="medication" value="yes">
+                                        <label for="YesCaf" class="yes">Yes</label>
+                                    </input>
+                                </div>
                             </div>
                             <div class="form-q">
                                 <label for="Approx">How long did it take you to fall asleep?</label>
                                 <input type="text" id="Approx" name="Approx">
                             </div> 
-                            <button class="btn btn-dark">Submit</button>
+                            <button class="btn btn-primary">Submit</button>
                         </form>
                     </div>
                 </div>
