@@ -32,6 +32,10 @@ ul.navbar {
   padding: 0;
   list-style-type: none;
   overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 
+    0 1px 3px rgba(0, 0, 0, 0.16),
+    0 1px 3px rgba(0, 0, 0, 0.23);
 }
 li.navbar {
   float: left;
