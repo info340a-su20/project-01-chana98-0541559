@@ -63,3 +63,25 @@ html {
   }
 
 /* Dylan */
+.form-container {
+  background-color: white;
+  border-radius: 10px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+input {
+  border-radius: 10px;
+}
+
+.form-time {
+  display: flexbox;
+}
+
+.form-section {
+  margin: 25px;
+}
+
+.form-q {
+  margin: 5px;
+}
