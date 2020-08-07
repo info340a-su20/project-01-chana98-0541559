@@ -103,3 +103,9 @@ input {
 .form-q {
   margin: 5px;
 }
+
+@media (max-width: 598px) {
+  .card {
+    display: none;
+  }
+}
