@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/style.css" rel="stylesheet">
     <title>Document</title>
@@ -15,21 +18,21 @@
             <div class="flex-container">
                 <section class="column">
                     <div class="card">
-                        <img src="https://iconsgalore.com/wp-content/uploads/2018/12/alarm-clock-1-featured.png"
+                        <img src="./img/alarm_clock.png"
                         alt="an image of a clock">
                         <p>Users log in the times they sleep and wake up.</p>
                     </div>
                 </section>
             <section class="column">
                 <div class="card">
-                    <img src="https://thumbs.dreamstime.com/b/young-man-suffers-lack-sleep-young-man-suffers-lack-sleep-vector-flat-modern-style-illustration-character-icon-100665757.jpg"
+                    <img src="./img/man_cant_sleep.jpg"
                     alt="an image of a man unable to sleep">
                     <p>Users will input the data over a couple of days to determine sleep patterns.</p>
                 </div>
             </section>
             <section class="column">
                 <div class="card">
-                    <img src="data:image/jpeg;base64,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"
+                    <img src="./img/fitbit_sleep.jpeg"
                     alt="an image of a sleep graph">
                     <p>After reading the data, users can decide what they want to do next.</p>
                 </div>
@@ -37,24 +40,43 @@
                 </div>
             </section>
             <section>
-                <form class="form">
-                    <label for="Sleep Time">Sleep Time: </label>
-                    <input type="number" id="Sleep Time" name="Sleep Time"><br>
-                    <label for="Wake-up Time">Wake-up Time: </label>
-                    <input type="number" id="Wake-up Time" name="Wake-up time"><br>
-                    <label for="Medication">Medication? </label>
-                    <label for="yes">Y</label>
-                    <input type="checkbox" id="Medication" name="Medication">
-                    <label for="no">N</label>
-                    <input type="checkbox" id="Medication" name="Medication"><br>
-                    <label for="Caffeine">Caffeine? </label>
-                    <label for="yes">Y</label>
-                    <input type="checkbox" id="Caffeine" name="Caffeine">
-                    <label for="no">N</label>
-                    <input type="checkbox" id="Caffeine" name="Caffeine"><br>
-                    <label for="Approx">How long did it take you to fall asleep?</label>
-                    <input type="text" id="Approx" name="Approx"><br>
-                  </form>
+                <div class="form-container">
+                    <div class="form-section">
+                        <h1>Add your Sleep Information Here!</h1>
+                    </div>
+                    <div class="form-section">
+                        <form class="form">
+                            <div class="form-q">
+                                <div class="form-time">
+                                    <label for="Sleep Time">Sleep Time: </label>
+                                    <input type="number" id="Sleep Time" name="Sleep Time">
+                                </div>
+                                <div class="form-time">
+                                    <label for="Wake-up Time">Wake-up Time: </label>
+                                    <input type="number" id="Wake-up Time" name="Wake-up time">
+                                </div>
+                            <div class="form-q">
+                                <label for="Medication">Medication? </label>
+                                <label for="yes">Y</label>
+                                <input type="checkbox" id="Medication" name="Medication">
+                                <label for="no">N</label>
+                                <input type="checkbox" id="Medication" name="Medication">
+                            </div>
+                            <div class="form-q">
+                                <label for="Caffeine">Caffeine? </label>
+                                <label for="yes">Y</label>
+                                <input type="checkbox" id="Caffeine" name="Caffeine">
+                                <label for="no">N</label>
+                                <input type="checkbox" id="Caffeine" name="Caffeine">
+                            </div>
+                            <div class="form-q">
+                                <label for="Approx">How long did it take you to fall asleep?</label>
+                                <input type="text" id="Approx" name="Approx">
+                            </div> 
+                            <button class="btn btn-dark">Submit</button>
+                        </form>
+                    </div>
+                </div>
             </section>
         </main>
         <a href="./about.html">About page</a>
