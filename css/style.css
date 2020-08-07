@@ -68,6 +68,7 @@ html {
   border-radius: 10px;
   padding-top: 15px;
   padding-bottom: 15px;
+  margin: auto;
 }
 
 input {
@@ -80,8 +81,44 @@ input {
 
 .form-section {
   margin: 25px;
+  display: flex;
 }
 
 .form-q {
-  margin: 5px;
+  margin:25px;
+  display: flex;
+}
+
+.form-choice input[type="radio"] {
+  opacity: 0;
+  position: fixed;
+  width: 0;
+}
+
+.form-choice label {
+    display: inline-block;
+    background-color: #ddd;
+    padding: 8px 25px;
+    font-family: sans-serif, Arial;
+    font-size: 16px;
+    border: 2px solid #444;
+    border-radius: 4px;
+}
+
+.form-choice label:hover {
+  background-color: lightblue;
+  color: white;
+}
+
+.form-choice input[type="radio"]:checked + label {
+    background-color: blue;
+    color: white;
+}
+
+.form-time > input {
+  width: 30%;
+}
+
+.form-q > label {
+  margin-right: 15px;
 }
