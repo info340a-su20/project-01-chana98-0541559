@@ -20,7 +20,7 @@ h1, h2, h3 {
   font-weight: 900;
 }
 
-p {
+h3 p {
   margin-right: 10rem;
 }
 /* Alex */
@@ -54,11 +54,12 @@ html {
 .flex-container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 .column {
   flex: 1;
 }
-.card {
+.card, .card2 {
   flex: 0 0 250px;
   background-color: white;
   margin: .5rem;
@@ -66,10 +67,15 @@ html {
   box-shadow: 
     0 1px 3px rgba(0, 0, 0, 0.16),
     0 1px 3px rgba(0, 0, 0, 0.23);
+  text-align: center;
 }
-.card p {
+.card p, .card2 p {
   padding: .5rem 1rem;
   
+}
+.card img, .card2 img {
+  width: 250px;
+  height: 250px;
 }
 section {
   padding: 1em;
