@@ -1,32 +1,30 @@
 /* Just so that merging is a little easier*/
 /* Allen */
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    color: #717E4E;
-    margin-top: 1rem;
-    margin-left: 5rem;
-    margin-right: 5rem;
-    background-color:#F0F3FA;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #717E4E;
+  margin-top: 1rem;
+  margin-left: 5rem;
+  margin-right: 5rem;
+  background-color:#F0F3FA;
 
-    /* Alex added stuff for flexbox */
-    box-sizing: border-box;
-    display: flex;
-    flex-grow: 1;
-    flex-direction: column;
-    height: inherit;
+  /* Alex added stuff for flexbox */
+  box-sizing: border-box;
+  flex-grow: 1;
+  flex-direction: column;
+  height: inherit;
 }
-
 h1, h2, h3 {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: #4F5936;
-    font-weight: 900;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: #4F5936;
+  font-weight: 900;
 }
 
 p {
-    margin-right: 10rem;
+  margin-right: 10rem;
 }
 /* Alex */
-ul.navbar {
+ul.createNav {
   background-color: #c2cdea;
   margin: 0;
   padding: 0;
@@ -34,120 +32,113 @@ ul.navbar {
   overflow: hidden;
   border-radius: 10px;
   box-shadow: 
-    0 1px 3px rgba(0, 0, 0, 0.16),
-    0 1px 3px rgba(0, 0, 0, 0.23);
+  0 1px 3px rgba(0, 0, 0, 0.16),
+  0 1px 3px rgba(0, 0, 0, 0.23);
 }
-li.navbar {
+ul.createNav li {
   float: left;
 }
-li.navbar a {
+ul.createNav li a {
   display: block;
   color: #717E4E;
   text-align: center;
   padding: 10px 10px;
   text-decoration: none;
 }
-li.navbar a:hover {
+ul.createNav li a:hover {
   background-color: #C2D4D4;
 }
 html {
-    height: 100%;
-  }
-.column {
-    flex: 1;
-  }
+  height: 100%;
+}
 .flex-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
+  display: flex;
+  flex-wrap: wrap;
+}
+.column {
+  flex: 1;
+}
 .card {
-    width: 250px;
-    flex: 0 0 250px;
-    background-color: white;
-    margin: .5rem;
-    border-radius: 10px;
-    box-shadow: 
-      0 1px 3px rgba(0, 0, 0, 0.16),
-      0 1px 3px rgba(0, 0, 0, 0.23);
-  }
+  flex: 0 0 250px;
+  background-color: white;
+  margin: .5rem;
+  border-radius: 10px;
+  box-shadow: 
+    0 1px 3px rgba(0, 0, 0, 0.16),
+    0 1px 3px rgba(0, 0, 0, 0.23);
+}
 .card p {
-    padding: .5rem 1rem;
-    text-align: center;
+  padding: .5rem 1rem;
+  
 }
-.card img {
-    width: 250px;
-    height: 250px;
-    border-radius: 10px 10px 0px 0px;
+section {
+  padding: 1em;
 }
-  section {
-    padding: 1em;
-  }
-
 /* Dylan */
 .form-container {
-  background-color: white;
-  border-radius: 10px;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  margin: auto;
+background-color: white;
+border-radius: 10px;
+padding-top: 15px;
+padding-bottom: 15px;
+margin: auto;
 }
 
+
 input {
-  border-radius: 10px;
+border-radius: 10px;
 }
 
 .form-time {
-  display: flexbox;
+display: flexbox;
 }
 
 .form-section {
-  margin: 25px;
-  display: flex;
+margin: 25px;
+display: flex;
 }
 
 .form-q {
-  margin:25px;
-  display: flex;
+margin:25px;
+display: flex;
 }
 
 .form-choice input[type="radio"] {
-  opacity: 0;
-  position: fixed;
-  width: 0;
+opacity: 0;
+position: fixed;
+width: 0;
 }
 
 .form-choice label {
-    display: inline-block;
-    background-color: #ddd;
-    padding: 8px 25px;
-    font-family: sans-serif, Arial;
-    font-size: 16px;
-    border: 2px solid #444;
-    border-radius: 4px;
+  display: inline-block;
+  background-color: #ddd;
+  padding: 8px 25px;
+  font-family: sans-serif, Arial;
+  font-size: 16px;
+  border: 2px solid #444;
+  border-radius: 4px;
 }
 
 .form-choice label:hover {
-  background-color: lightblue;
-  color: white;
+background-color: lightblue;
+color: white;
 }
 
 .form-choice input[type="radio"]:checked + label {
-    background-color: blue;
-    color: white;
+  background-color: blue;
+  color: white;
 }
 
 .form-time > input {
-  width: 30%;
+width: 30%;
 }
 
 .form-q > label {
-  margin-right: 15px;
-  margin: 5px;
+margin-right: 15px;
+margin: 5px;
 }
 
 @media (max-width: 598px) {
-  .card {
-    display: none;
-  }
+.card {
+  display: none;
+}
 }
