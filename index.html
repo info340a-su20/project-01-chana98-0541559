@@ -24,26 +24,27 @@
             <section class="column">
                 <div class="flex-container">
                     <div class="card">
-                    <img src="./img/alarm_clock.png" alt="a picture of an alarm_clock">
-                    <p>Good Morning!</p>
-                    </div>
-                    <div class="card2">
-                    <img src="./img/noun_pillow_1507618.png"
-                    alt="pillow by Artdabana@Design from the Noun Project">
-                    <p>Sleep Quality: Average</p>
-                    <button id='showMore' aria-label="submit">Details</button>
-                    <div id="toggle" class="show"> 
-                    <div class="card3">
-                        <div id="moredetails">
-                            <p>In your last entry, you recorded your sleeptime as 12 AM.</p>
-                            <p>You recorded your wake-up time as 9 AM.</p>
-                            <p>You recorded taking no medication.</p>
-                            <p>You recorded taking no caffeine.</p>
-                            <p>You recorded taking very little time to sleep.</p>
-                            <p>You should have approximately 9 hours of sleep!</p>
+                        <img src="./img/alarm_clock.png" alt="a picture of an alarm_clock">
+                        <p>Good Morning!</p>
                         </div>
-                    </div>
-                    </div>
+                        <div class="card2">
+                        <img src="./img/noun_pillow_1507618.png"
+                        alt="pillow by Artdabana@Design from the Noun Project">
+                        <p>Sleep Quality: Average</p>
+                        <button id='showMore' class="btn btn-primary dark" 
+                        aria-label="submit">Details</button>
+                        <div id="toggle" class="show"> 
+                            <div class="card3">
+                                <div id="moredetails">
+                                    <p>In your last entry, you recorded your sleeptime as 12 AM.</p>
+                                    <p>You recorded your wake-up time as 9 AM.</p>
+                                    <p>You recorded taking no medication.</p>
+                                    <p>You recorded taking no caffeine.</p>
+                                    <p>You recorded taking very little time to sleep.</p>
+                                    <p>You should have approximately 9 hours of sleep!</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="card">
                         <img src="./img/sleeping.png" alt="A person sleeping">
@@ -58,15 +59,15 @@
                     </div>
                     <div class="form-section">
                         <form class="form">
-                            <div class="form-q form-time">
+                            <div class="form-row form-text">
                                 <label for="Sleep Time">Sleep Time: </label>
-                                <input type="time" id="Sleep Time" name="Sleep Time">
+                                <input type="time" id="Sleep Time" name="Sleep Time" required>
                             </div>
-                            <div class="form-q form-time">
+                            <div class="form-row form-text">
                                 <label for="Wake-up Time">Wake-up Time: </label>
-                                <input type="time" id="Wake-up Time" name="Wake-up time">
+                                <input type="time" id="Wake-up Time" name="Wake-up time" required>
                             </div>
-                            <div class="form-q">
+                            <div class="form-row">
                                 <label for="Medication">Medication? </label>
                                 <div class="form-choice">
                                     <input type="radio" id="NoMed" name="caffeine" value="no" checked>
@@ -77,7 +78,7 @@
                                     </input>
                                 </div>
                             </div>
-                            <div class="form-q">
+                            <div class="form-row">
                                 <label for="Caffeine">Caffeine? </label>
                                 <div class="form-choice">
                                     <input type="radio" id="NoCaf" name="medication" value="no" checked>
@@ -88,16 +89,22 @@
                                     </input>
                                 </div>
                             </div>
-                            <div class="form-q">
+                            <div class="form-row form-text">
                                 <label for="Approx">How long did it take you to fall asleep?</label>
                                 <input type="text" id="Approx" name="Approx">
                             </div> 
-                            <button class="btn btn-primary" aria-label="Submit">Submit</button>
+                            <button class="btn btn-primary dark" id="submit" aria-label="Submit">Submit</button>
                         </form>
                     </div>
                 </div>
             </section>
         </main>
+        <footer>
+            <div class="footer">
+                INFO340 Web Development Project
+            </div>
+        </footer>
+
         <script src="index.js"></script>
     </body>
 </html>
