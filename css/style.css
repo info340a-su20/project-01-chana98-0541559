@@ -102,11 +102,6 @@ div.card3 {
   height: 250px;
 }
 
-img {
-  height: 10px;
-  width: 10px;
-}
-
 /* Display of Details */
 .show {
   display: none;
@@ -124,8 +119,9 @@ img {
   width: 100%;
 }
 
-.form-row > label {
+.form-row > label, .form-row > p {
   padding-right: 1rem;
+  margin: 5px 15px 5px 5px;
 }
 
 /* Curved Text Boxes */
@@ -181,11 +177,6 @@ input {
 
 .form-text > input {
   flex-grow: 1;
-}
-
-.form-row > label {
-  margin-right: 15px;
-  margin: 5px;
 }
 
 /* Footer Styling */
