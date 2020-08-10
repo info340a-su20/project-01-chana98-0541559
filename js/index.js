@@ -34,7 +34,9 @@ var form = document.querySelector("form");
 let sleep = document.querySelector("#SleepTime");
 let wakeup = document.querySelector("#Wake-upTime");
 let yesMed = document.querySelector("#YesMed");
+let noMed = document.querySelector("#NoMed");
 let yesCaf = document.querySelector("#YesCaf");
+let noCaf = document.querySelector("#NoCaf");
 let think = document.querySelector("#Approx");
 
 form.addEventListener("submit", function(evt) {
@@ -48,7 +50,9 @@ form.addEventListener("submit", function(evt) {
     sleep.value = "";
     wakeup.value = "";
     yesCaf.checked = false;
+    noCaf.checked = true;
     yesMed.checked = false;
+    noMed.checked = true;
     think.value = "";
 
     // Renders the Logs
