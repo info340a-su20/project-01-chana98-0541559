@@ -32,6 +32,7 @@ function renderDetails() {
 var form = document.querySelector("form");
 
 // Taking in information from form
+let inputDate = document.querySelector("#SearchDate")
 let date = document.querySelector("#SleepDate")
 let sleep = document.querySelector("#SleepTime");
 let wakeup = document.querySelector("#Wake-upTime");
