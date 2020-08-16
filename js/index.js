@@ -17,6 +17,7 @@ showMore.addEventListener('click', function () {
 // Rendering the Details for div element
 function renderDetails() {
     let details = document.querySelector("#moredetails");
+    details.innerHTML = "";
     let summary = document.createElement("p");
     if (state.formLog.length == 0) {
         summary.textContent = state.noInformation;
