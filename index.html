@@ -1,118 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head profile="https://thenounproject.com/search/?q=sleep&i=947849">
-    <link rel="icon" type="image/png" href="./img/noun_sleeping_947849.png" attribution="sleeping by Adrien Coquet from the Noun Project">
+    <link rel="icon" type="image/png" href="./img/noun_sleeping_947849.png"
+        attribution="sleeping by Adrien Coquet from the Noun Project">
     <meta charset="UTF-8">
 
     <!-- CSS only -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <meta name="author" content="Alex Chan, Allen Zhou, Dylan Hartono">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="css/style.css" rel="stylesheet">
     <title>Sleep Web App</title>
 </head>
-    <body>
-        <header>
-            <h1>Sleep Web App</h1>
-        </header>
-        <main>
-            <div id="opaque"></div>
-            <ul class="createNav">
-                <li><a href="./index.html">Main</a></li>
-                <li><a href="./about.html">About</a></li>
-            </ul> 
-            <section class="column">
-                <div class="flex-container">
-                    <div class="card">
-                        <img src="./img/alarm_clock.png" alt="a picture of an alarm_clock">
-                        <p>Good Morning!</p>
-                        </div>
-                        <div class="card2">
-                        <img src="./img/noun_pillow_1507618.png"
-                        alt="pillow by Artdabana@Design from the Noun Project">
-                        <p>Sleep Quality: Average</p>
-                        <button id="showMore" class="btn btn-primary dark" 
-                        aria-label="submit">Details</button>
-                        <div id="toggle" class="show"> 
-                            <div class="card3">
-                                <div id="moredetails">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img src="./img/sleeping.png" alt="A person sleeping">
-                        <p>You should be asleep in approximately 15 hours.</p>
-                    </div>
-                </div>
-            </section>
-            <section>
-                <div class="container">
-                    <div class="form-section">
-                        <h1>Add your Sleep Information Here!</h1>
-                    </div>
-                    <div class="form-section">
-                        <form class="form">
-                            <div class="form-row form-text">
-                                <label for="SleepDate">Date:</label>
-                                <input type="date" id="SleepDate" name="SleepDate" required>
-                            </div>
-                            <div class="form-row form-text">
-                                <label for="SleepTime">Sleep Time:</label>
-                                <input type="time" id="SleepTime" name="SleepTime" required>
-                            </div>
-                            <div class="form-row form-text">
-                                <label for="Wake-upTime">Wake-up Time:</label>
-                                <input type="time" id="Wake-upTime" name="Wake-up time" required>
-                            </div>
-                            <div class="form-row">
-                                <p>Medication?</p>
-                                <div class="form-choice" id="Medication">
-                                    <input type="radio" id="NoMed" name="Medication" value="no" checked>
-                                        <label for="NoMed" class="no">No</label>
-                                    </input>
-                                    <input type="radio" id="YesMed" name="Medication" value="yes">
-                                        <label for="YesMed" class="yes">Yes</label>
-                                    </input>
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <p>Caffeine? &nbsp; &nbsp;</p>
-                                <div class="form-choice" id="Caffeine">
-                                    <input type="radio" id="NoCaf" name="Caffeine" value="no" checked>
-                                        <label for="NoCaf" class="no">No</label>
-                                    </input>
-                                    <input type="radio" id="YesCaf" name="Caffeine" value="yes">
-                                        <label for="YesCaf" class="yes">Yes</label>
-                                    </input>
-                                </div>
-                            </div>
-                            <div class="form-row form-text">
-                                <label for="Approx">How long did it take you to fall asleep?</label>
-                                <input type="text" id="Approx" name="Approx">
-                            </div>
-                            <button class="btn btn-primary dark">Submit</button>
-                        </form>
-                    </div>
-                </div>
-            </section>
-            <section>
-                <div class="container">
-                    <h2>Your Sleep Log</h2>
-                    <div id="logs">
-                        <p>
-                            Currently your sleep log is empty. Please submit a form to add your sleep schedule!
-                        </p>
-                    </div>
-                </div>
-            </section> 
-        </main>
-        <footer>
-            <div class="footer">
-                INFO340 Web Development Project
-            </div>
-        </footer>
 
-        <script src="./js/index.js"></script>
-    </body>
+<body>
+    <header>
+        <h1>Sleep Web App</h1>
+    </header>
+    <main>
+        <div id="opaque"></div>
+        <ul class="createNav">
+            <li><a href="./index.html">Main</a></li>
+            <li><a href="./about.html">About</a></li>
+        </ul>
+        <section class="column">
+            <div class="flex-container">
+                <div class="card">
+                    <img src="./img/alarm_clock.png" alt="a picture of an alarm_clock">
+                    <p>Good Morning!</p>
+                </div>
+                <div class="card2">
+                    <img src="./img/noun_pillow_1507618.png" alt="pillow by Artdabana@Design from the Noun Project">
+                    <p>Sleep Quality: Average</p>
+                    <button id="showMore" class="btn btn-primary dark" aria-label="submit">Details</button>
+                    <div id="toggle" class="show">
+                        <div class="card3">
+                            <div id="moredetails">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="./img/sleeping.png" alt="A person sleeping">
+                    <p>You should be asleep in approximately 15 hours.</p>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="container">
+                <div class="form-section">
+                    <h1>Add your Sleep Information Here!</h1>
+                </div>
+                <div class="form-section">
+                    <form class="form">
+                        <div class="form-row form-text">
+                            <label for="SleepDate">Date:</label>
+                            <input type="date" id="SleepDate" name="SleepDate" required>
+                        </div>
+                        <div class="form-row form-text">
+                            <label for="SleepTime">Sleep Time:</label>
+                            <input type="time" id="SleepTime" name="SleepTime" required>
+                        </div>
+                        <div class="form-row form-text">
+                            <label for="Wake-upTime">Wake-up Time:</label>
+                            <input type="time" id="Wake-upTime" name="Wake-up time" required>
+                        </div>
+                        <div class="form-row">
+                            <p>Medication?</p>
+                            <div class="form-choice" id="Medication">
+                                <input type="radio" id="NoMed" name="Medication" value="no" checked>
+                                <label for="NoMed" class="no">No</label>
+                                </input>
+                                <input type="radio" id="YesMed" name="Medication" value="yes">
+                                <label for="YesMed" class="yes">Yes</label>
+                                </input>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <p>Caffeine? &nbsp; &nbsp;</p>
+                            <div class="form-choice" id="Caffeine">
+                                <input type="radio" id="NoCaf" name="Caffeine" value="no" checked>
+                                <label for="NoCaf" class="no">No</label>
+                                </input>
+                                <input type="radio" id="YesCaf" name="Caffeine" value="yes">
+                                <label for="YesCaf" class="yes">Yes</label>
+                                </input>
+                            </div>
+                        </div>
+                        <div class="form-row form-text">
+                            <label for="Approx">How long did it take you to fall asleep?</label>
+                            <input type="text" id="Approx" name="Approx">
+                        </div>
+                        <button class="btn btn-primary dark">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="container">
+                <h2>Your Sleep Log</h2>
+                <div class="form-row form-text">
+                    <label for="searchDate">Search For Date:</label>
+                    <input type="date" id="searchDate" name="searchDate">
+                </div>
+                <div id="logs">
+                    <p>
+                        Currently your sleep log is empty. Please submit a form to add your sleep schedule!
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer">
+            INFO340 Web Development Project
+        </div>
+    </footer>
+
+    <script src="./js/index.js"></script>
+</body>
+
 </html>
