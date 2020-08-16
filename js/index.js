@@ -93,7 +93,7 @@ function renderLogs() {
 
         // If we want to show the form
         if(form.show) {
-            desc.textContent = "You did " + (form.caf?"":"not") + " drink caffeine and did " + (form.caf?"":"not") + " take medicine. " + (form.think.length==0?"":("You thought you slept " + form.think + "."));
+            desc.textContent = "You did " + (form.caf?"":"not") + " drink caffeine and did " + (form.caf?"":"not") + " take medicine. " + (form.think.length==0?"":("You thought you fell asleep in " + form.think + "."));
             desc.classList.add("lightDesc");
         }
 
