@@ -2,8 +2,8 @@
 
 // Data stored in the website
 let state = {
-    noInformation : "You have not put any information yet into the site! Please use the form to add new information",
-    formLog : []
+    noInformation: "You have not put any information yet into the site! Please use the form to add new information",
+    formLog: []
 }
 
 // Creates the popup at the very top once the details button is pressed
@@ -23,17 +23,18 @@ function renderDetails() {
         summary.textContent = state.noInformation;
     } else {
         let log = state.formLog[state.formLog.length - 1];
-        summary.textContent = "On " + log.date + ", You slept at " + log.sleep + " and woke up at " + log.wakeup + ". You had " + (log.med?"":"no") + " medications and " + (log.caff?"":"no") + " caffeiene last night.";
+        summary.textContent = "On " + log.date + ", You slept at " + log.sleep + " and woke up at " + log.wakeup + ". You had " + (log.med ? "" : "no") + " medications and " + (log.caff ? "" : "no") + " caffeiene last night.";
     }
-    details.appendChild(summary);    
+    details.appendChild(summary);
 }
 
 // Form Submission
 var form = document.querySelector("form");
 
 // Taking in information from form
-let inputDate = document.querySelector("#SearchDate")
-let date = document.querySelector("#SleepDate")
+let inputDate = document.querySelector("#SearchDate");
+let clearDate = document.querySelector("#ClearDate");
+let date = document.querySelector("#SleepDate");
 let sleep = document.querySelector("#SleepTime");
 let wakeup = document.querySelector("#Wake-upTime");
 let yesMed = document.querySelector("#YesMed");
@@ -42,13 +43,20 @@ let yesCaf = document.querySelector("#YesCaf");
 let noCaf = document.querySelector("#NoCaf");
 let think = document.querySelector("#Approx");
 
-form.addEventListener("submit", function(evt) {
+//Search for date function
+let searchFormLog = state.formLog.filter((sleepEvent) => sleepEvent.date.value === inputDate.value);
+let dateSubmitted = false;
+inputDate.addEventListener("submit", function () {
+    return dateSubmitted = true;
+});
+
+form.addEventListener("submit", function (evt) {
     // Stopping from reloading page
     evt.preventDefault();
 
     // Adding values to render
-    state.formLog.push({date: date.value, sleep: sleep.value, wakeup: wakeup.value, caf: yesCaf.checked, med: yesMed.checked, think: think.value, show: false});
-    
+    state.formLog.push({ date: date.value, sleep: sleep.value, wakeup: wakeup.value, caf: yesCaf.checked, med: yesMed.checked, think: think.value, show: false });
+
     // Clears values
     sleep.value = "";
     wakeup.value = "";
@@ -59,27 +67,31 @@ form.addEventListener("submit", function(evt) {
     think.value = "";
 
     // Renders the Logs
-    renderLogs();
+    if (dateSubmitted) {
+        renderLogs(searchFormLog);
+    } else {
+        renderLogs(state.formLog);
+    }
 });
 
 // Printing out the logs for the program
-function renderLogs() {
+function renderLogs(formLog) {
     let logs = document.querySelector("#logs");
 
     // Clears the current log
     let child = logs.lastElementChild;
-    while(child) {
+    while (child) {
         child.remove();
         child = logs.lastElementChild;
     }
 
     // Prints out the logs
     let i = 1;
-    for(let form of state.formLog) {
+    for (let form of formLog) {
         // Created a mainCard for each form
         let mainCard = document.createElement("div");
         mainCard.classList.add("log-row");
-        
+
         // Title
         let title = document.createElement("h4");
         title.textContent = "Day " + i + ": On " + form.date + ", you slept from " + form.sleep + " to " + form.wakeup + ".";
@@ -87,15 +99,14 @@ function renderLogs() {
 
         // Adding Description
         let desc = document.createElement("p");
-        mainCard.addEventListener("click", function() {
+        mainCard.addEventListener("click", function () {
             form.show = !form.show;
-            console.log(state.formLog);
-            renderLogs();
+            renderLogs(formLog);
         });
 
         // If we want to show the form
-        if(form.show) {
-            desc.textContent = "You did " + (form.caf?"":"not") + " drink caffeine and did " + (form.caf?"":"not") + " take medicine. " + (form.think.length==0?"":("You thought you fell asleep in " + form.think + "."));
+        if (form.show) {
+            desc.textContent = "You did " + (form.caf ? "" : "not") + " drink caffeine and did " + (form.caf ? "" : "not") + " take medicine. " + (form.think.length == 0 ? "" : ("You thought you fell asleep in " + form.think + "."));
             desc.classList.add("lightDesc");
         }
 
