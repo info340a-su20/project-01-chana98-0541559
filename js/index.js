@@ -46,7 +46,7 @@ form.addEventListener("submit", function(evt) {
     evt.preventDefault();
 
     // Adding values to render
-    state.formLog.push({sleep: sleep.value, wakeup: wakeup.value, caf: yesCaf.checked, med: yesMed.checked, think: think.value, show: false});
+    state.formLog.push({date: date.value, sleep: sleep.value, wakeup: wakeup.value, caf: yesCaf.checked, med: yesMed.checked, think: think.value, show: false});
     
     // Clears values
     sleep.value = "";
@@ -81,7 +81,7 @@ function renderLogs() {
         
         // Title
         let title = document.createElement("h4");
-        title.textContent = "Day " + i + ": You slept from " + form.sleep + " to " + form.wakeup + ".";
+        title.textContent = "Day " + i + ": On " + form.date + ", you slept from " + form.sleep + " to " + form.wakeup + ".";
         mainCard.appendChild(title);
 
         // Adding Description
