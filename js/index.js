@@ -23,7 +23,7 @@ function renderDetails() {
         summary.textContent = state.noInformation;
     } else {
         let log = state.formLog[state.formLog.length - 1];
-        summary.textContent = "You slept at " + log.sleep + " and woke up at " + log.wakeup + ". You had " + (log.med?"":"no") + " medications and " + (log.caff?"":"no") + " caffeiene last night.";
+        summary.textContent = "On " + log.date + ", You slept at " + log.sleep + " and woke up at " + log.wakeup + ". You had " + (log.med?"":"no") + " medications and " + (log.caff?"":"no") + " caffeiene last night.";
     }
     details.appendChild(summary);    
 }
@@ -32,6 +32,7 @@ function renderDetails() {
 var form = document.querySelector("form");
 
 // Taking in information from form
+let date = document.querySelector("#SleepDate")
 let sleep = document.querySelector("#SleepTime");
 let wakeup = document.querySelector("#Wake-upTime");
 let yesMed = document.querySelector("#YesMed");
