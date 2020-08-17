@@ -50,7 +50,8 @@ var search = document.querySelector("#Search")
 // Taking in information from form
 let inputDate = document.querySelector("#SearchDate");
 let searchButton = document.querySelector("#SearchButton")
-let clearButton = document.querySelector("#ClearButton");
+let clearQueryButton = document.querySelector("#ClearQueryButton");
+let clearLogButton = document.querySelector("#ClearLogButton");
 let date = document.querySelector("#SleepDate");
 let sleep = document.querySelector("#SleepTime");
 let wakeup = document.querySelector("#Wake-upTime");
@@ -96,7 +97,7 @@ searchButton.addEventListener("click", function () {
 });
 
 // Clear a specific date and go back to original display
-clearButton.addEventListener("click", function () {
+clearQueryButton.addEventListener("click", function () {
     let searchFormLog = state.formLog;
     inputDate.value = "";
     if (searchFormLog.length > 0) {
@@ -108,6 +109,18 @@ clearButton.addEventListener("click", function () {
         p.textContent = "Currently your sleep log is empty. Please submit a form to add your sleep schedule!"
         logs.appendChild(p);
     }
+});
+
+// Clear log
+clearLogButton.addEventListener("click", function () {
+    state.formLog = [];
+    let searchFormLog = state.formLog;
+    renderLogs(searchFormLog);
+    let logs = document.querySelector("#logs");
+    logs.textContent = "";
+    let p = document.createElement("p");
+    p.textContent = "Currently your sleep log is empty. Please submit a form to add your sleep schedule!"
+    logs.appendChild(p);
 });
 
 // Printing out the logs for the program
