@@ -31,6 +31,9 @@ function renderDetails() {
 // Form Submission
 var form = document.querySelector("form");
 
+// Search for Date Submission
+var search = document.querySelector("#Search")
+
 // Taking in information from form
 let inputDate = document.querySelector("#SearchDate");
 let clearDate = document.querySelector("#ClearDate");
@@ -43,10 +46,11 @@ let yesCaf = document.querySelector("#YesCaf");
 let noCaf = document.querySelector("#NoCaf");
 let think = document.querySelector("#Approx");
 
-//Search for date function
-let searchFormLog = state.formLog.filter((sleepEvent) => sleepEvent.date.value === inputDate.value);
+//  Search for date function
 let dateSubmitted = false;
-inputDate.addEventListener("submit", function () {
+let searchFormLog = state.formLog;
+search.addEventListener("submit", function () {
+    let searchFormLog = state.formLog.filter((sleepEvent) => sleepEvent.date.value === inputDate.value);
     return dateSubmitted = true;
 });
 
