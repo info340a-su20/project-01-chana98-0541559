@@ -36,7 +36,8 @@ var search = document.querySelector("#Search")
 
 // Taking in information from form
 let inputDate = document.querySelector("#SearchDate");
-let clearDate = document.querySelector("#ClearDate");
+let searchButton = document.querySelector("#SearchButton")
+let clearButton = document.querySelector("#ClearButton");
 let date = document.querySelector("#SleepDate");
 let sleep = document.querySelector("#SleepTime");
 let wakeup = document.querySelector("#Wake-upTime");
@@ -45,14 +46,6 @@ let noMed = document.querySelector("#NoMed");
 let yesCaf = document.querySelector("#YesCaf");
 let noCaf = document.querySelector("#NoCaf");
 let think = document.querySelector("#Approx");
-
-//  Search for date function
-let dateSubmitted = false;
-let searchFormLog = state.formLog;
-search.addEventListener("submit", function () {
-    let searchFormLog = state.formLog.filter((sleepEvent) => sleepEvent.date.value === inputDate.value);
-    return dateSubmitted = true;
-});
 
 form.addEventListener("submit", function (evt) {
     // Stopping from reloading page
@@ -71,10 +64,36 @@ form.addEventListener("submit", function (evt) {
     think.value = "";
 
     // Renders the Logs
-    if (dateSubmitted) {
+    renderLogs(state.formLog);
+});
+
+//  Search for a specific date
+searchButton.addEventListener("click", function () {
+    let searchFormLog = state.formLog.filter((sleepEvent) => sleepEvent.date === inputDate.value);
+    console.log(searchFormLog);
+    if (searchFormLog.length > 0) {
         renderLogs(searchFormLog);
     } else {
-        renderLogs(state.formLog);
+        let logs = document.querySelector("#logs");
+        logs.textContent = "";
+        let p = document.createElement("p");
+        p.textContent = "No search results found. Try another date."
+        logs.appendChild(p);
+    }
+});
+
+// Clear a specific date and go back to original display
+clearButton.addEventListener("click", function () {
+    let searchFormLog = state.formLog;
+    inputDate.value = "";
+    if (searchFormLog.length > 0) {
+        renderLogs(searchFormLog);
+    } else {
+        let logs = document.querySelector("#logs");
+        logs.textContent = "";
+        let p = document.createElement("p");
+        p.textContent = "Currently your sleep log is empty. Please submit a form to add your sleep schedule!"
+        logs.appendChild(p);
     }
 });
 
