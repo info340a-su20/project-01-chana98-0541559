@@ -28,6 +28,19 @@ function renderDetails() {
     details.appendChild(summary);
 }
 
+// Date check 
+var newDay = document.querySelector("#timeofday");
+var todayDay = new Date();
+var timeOfDay = todayDay.getHours();
+if (timeOfDay >= 5 && timeOfDay <= 12) {
+    newDay.textContent = "Good morning!"
+} else if (timeOfDay >= 12 && timeOfDay <= 18) {
+    newDay.textContent = "Good afternoon!"
+} else {
+    newDay.textContent = "Good evening!"
+}
+
+
 // Form Submission
 var form = document.querySelector("form");
 
