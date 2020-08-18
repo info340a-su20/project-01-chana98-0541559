@@ -28,6 +28,13 @@ function renderDetails() {
     details.appendChild(summary);
 }
 
+// Initializes app message to fill out form
+let messageUpdate = document.querySelector('#sleepQuality');
+if (state.formLog.length == 0) {
+    messageUpdate.textContent = "Please fill out the form below!"
+}
+
+
 // Date check 
 var newDay = document.querySelector("#timeofday");
 var todayDay = new Date();
@@ -67,7 +74,6 @@ form.addEventListener("submit", function (evt) {
 
     // Adding values to render
     state.formLog.push({ date: date.value, sleep: sleep.value, wakeup: wakeup.value, caf: yesCaf.checked, med: yesMed.checked, think: think.value, show: false });
-
     // Clears values
     sleep.value = "";
     wakeup.value = "";
@@ -79,6 +85,26 @@ form.addEventListener("submit", function (evt) {
 
     // Renders the Logs
     renderLogs(state.formLog);
+});
+
+// Updates middle card to change message
+form.addEventListener("submit", function (evt) {
+    evt.preventDefault();
+    let sleepQuality = document.querySelector("#sleepQuality");
+    let log = state.formLog[state.formLog.length - 1];
+    var sleepTime = +log.sleep.substring(0, 2);
+    var wakeTime = +log.wakeup.substring(0, 2);
+    var hourDiff = Math.abs(sleepTime - wakeTime);
+    if (hourDiff > 8) {
+        sleepQuality.textContent = "In your last entry, you said you got " + hourDiff + " hours of sleep! You're getting a lot of sleep! Just be careful."
+        sleepQuality.style.color = "green";
+    } else if (hourDiff <= 8 && hourDiff >= 6) {
+        sleepQuality.textContent = "In your last entry, you said you got " + hourDiff + " hours of sleep! You're getting the right amount of sleep!"
+        sleepQuality.style.color = "green";
+    } else if (hourDiff < 6) {
+        sleepQuality.textContent = "In your last entry, you said you got " + hourDiff + " hours of sleep! You need more sleep!"
+        sleepQuality.style.color = "red";
+    }
 });
 
 //  Search for a specific date
