@@ -23,7 +23,7 @@ function renderDetails() {
         summary.textContent = state.noInformation;
     } else {
         let log = state.formLog[state.formLog.length - 1];
-        summary.textContent = "On " + log.date + ", You slept at " + log.sleep + " and woke up at " + log.wakeup + ". You had " + (log.med ? "" : "no") + " medications and " + (log.caff ? "" : "no") + " caffeiene last night.";
+        summary.textContent = "On " + log.date + ", You slept at " + log.sleep + " and woke up at " + log.wakeup + ". You had " + (log.med ? "" : "no") + " medications and " + (log.caff ? "" : "no") + " caffeine last night.";
     }
     details.appendChild(summary);
 }
@@ -95,14 +95,20 @@ form.addEventListener("submit", function (evt) {
     var sleepTime = +log.sleep.substring(0, 2);
     var wakeTime = +log.wakeup.substring(0, 2);
     var hourDiff = Math.abs(sleepTime - wakeTime);
-    if (hourDiff > 8) {
-        sleepQuality.textContent = "In your last entry, you said you got " + hourDiff + " hours of sleep! You're getting a lot of sleep! Just be careful."
-        sleepQuality.style.color = "green";
+    if (hourDiff > 11) {
+        sleepQuality.textContent = "You recorded " + hourDiff + " hour(s) of sleep in your last entry. You are oversleeping! Try to increase your sleep quality and decrease your sleep quantity."
+        sleepQuality.style.color = "red";
+    } else if (hourDiff <= 11 && hourDiff > 8) {
+        sleepQuality.textContent = "In your last entry, you said you got " + hourDiff + " hour(s) of sleep! You're getting a lot of sleep! Just be mindful and try not to sleep too much."
+        sleepQuality.style.color = "orange";
     } else if (hourDiff <= 8 && hourDiff >= 6) {
-        sleepQuality.textContent = "In your last entry, you said you got " + hourDiff + " hours of sleep! You're getting the right amount of sleep!"
+        sleepQuality.textContent = "You got " + hourDiff + " hour(s) of sleep! You're getting the right amount of sleep! Try to not exercise too close to bedtime to keep this up."
         sleepQuality.style.color = "green";
     } else if (hourDiff < 6) {
-        sleepQuality.textContent = "In your last entry, you said you got " + hourDiff + " hours of sleep! You need more sleep!"
+        sleepQuality.textContent = "You got " + hourDiff + " hour(s) of sleep! You need more sleep! Try sleeping in a dark, cool room and limiting your exposure to light near bedtime."
+        sleepQuality.style.color = "red";
+    } else if (hourDiff == 0) {
+        sleepQuality.textContent = "You got " + hourDiff + " hours of sleep? You need to sleep!"
         sleepQuality.style.color = "red";
     }
 });
