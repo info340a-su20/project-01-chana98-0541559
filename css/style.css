@@ -22,6 +22,8 @@ header h1 {
 h1, h2, h3, .card4 p {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-weight: 900;
+  margin: 1rem;
+  text-align: left;
 }
 
 h3 p {
@@ -88,8 +90,9 @@ section {
     0 1px 3px rgba(0, 0, 0, 0.16),
     0 1px 3px rgba(0, 0, 0, 0.23);
   text-align: center;
-
+  padding-bottom: 2em;
 }
+
 .card2 {
   flex: 100 0 250px;
   background-color: white;
@@ -99,6 +102,7 @@ section {
     0 1px 3px rgba(0, 0, 0, 0.16),
     0 1px 3px rgba(0, 0, 0, 0.23);
   text-align: center;
+  padding-bottom: 2em;
 }
 
 div.card3 {
@@ -113,14 +117,16 @@ div.card3 {
 }
 
 .card p, .card2 p, .card3 p, .card4 p {
-  padding: .5rem 1rem;
+  padding: .5rem 2rem;
+  text-align: left;
 }
 
 .card img {
   width: 250px;
   height: 250px;
+}
 
-}.card2 img {
+.card2 img {
   width: 400px;
   height: 400px;
 }
@@ -128,6 +134,7 @@ div.card3 {
 .card4 img {
   width: 150px;
   height: 150px;
+  padding: 5px;
 }
 
 /* Display of Details */
@@ -147,6 +154,10 @@ div.card3 {
   width: 100%;
 }
 
+.container h2 {
+  margin-left: 0;
+}
+
 .form-row > label, .form-row > p {
   padding-right: 1rem;
   margin: 5px 15px 5px 5px;
@@ -163,6 +174,10 @@ div.card3 {
 .form-section {
   margin-bottom: 25px;
   display: flex;
+}
+
+.form-section h2 {
+  margin-left: 0;
 }
 
 .form-row {
@@ -239,6 +254,25 @@ div.card3 {
   color: darkblue;
   border-radius: .5rem;
   margin-top: .5rem;
+}
+
+/* About Page */
+#ProblemDomain {
+  margin-left: 3rem;
+}
+
+#ProblemDomain p {
+  margin-left: 1rem;
+  margin-right: 3rem;
+}
+
+#AppDescription {
+  margin-left: 4rem;
+  margin-right: 4rem;
+}
+
+#AppDescription h2 {
+  margin-left: 0;
 }
 
 /* Media Queries */
