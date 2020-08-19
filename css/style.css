@@ -5,8 +5,6 @@ html {
 body {
   font-family: Arial, Helvetica, sans-serif;
   margin-top: 1rem;
-  margin-left: 5%;
-  margin-right: 5%;
   background-color:#F0F3FA;
 
   /* Flexbox */
@@ -14,6 +12,11 @@ body {
   flex-grow: 1;
   flex-direction: column;
   height: inherit;
+}
+
+header h1 {
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 h1, h2, h3, .card4 p {
@@ -30,6 +33,9 @@ ul.createNav {
   background-color: darkblue;
   margin: 0;
   padding: 0;
+  margin-left: 5%;
+  margin-right: 5%;
+  padding-left: 5px;
   list-style-type: none;
   overflow: hidden;
   border-radius: 10px;
@@ -65,6 +71,8 @@ section {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin-left: 3%;
+  margin-right: 3%;
 }
 
 .column {
@@ -200,10 +208,10 @@ div.card3 {
 /* Footer Styling */
 .footer {
   padding: 50px;
+  padding-left: 40px;
   background-color: darkblue;
-  width: 110%;
+  width: 100%;
   margin: auto;
-  margin-left: -5%;
   color: white;
   margin-top: 3rem;
 }
@@ -219,6 +227,10 @@ div.card3 {
   box-shadow: 
     0 1px 3px rgba(0, 0, 0, 0.16),
     0 1px 3px rgba(0, 0, 0, 0.23);
+}
+
+#logs p {
+  margin-top: 1em;
 }
 
 .lightDesc {
