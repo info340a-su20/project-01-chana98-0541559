@@ -289,7 +289,13 @@ div.card3 {
     margin: 5%;
   }
 }
-@media (max-width: 1000px) {
+@media (max-width: 768px) {
+  .card {
+    display: none;
+  }
+
+}
+@media (max-width: 1200px) {
   body {
     background-color: #C2DBBD;
   }
