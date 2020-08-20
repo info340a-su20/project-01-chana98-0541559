@@ -277,8 +277,12 @@ div.card3 {
 
 /* Media Queries */
 @media (max-width: 598px) {
-  .card {
+  .card, .card4 {
     display: none;
+  }
+
+  .card2 {
+    flex: 0 0 250px;
   }
 
   .body {
