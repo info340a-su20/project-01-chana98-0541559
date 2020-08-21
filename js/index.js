@@ -14,6 +14,7 @@ let sleepAnalysis = d3.csv(csv)
       error.classList.add("alert-danger");
       error.textContent = "Sleep Advice Not Loaded";
     });
+
 // Data stored in the website
 let state = {
     noInformation: "You have not put any information yet into the site! Please use the form to add new information",
@@ -48,7 +49,7 @@ function renderDetails() {
 }
 
 
-// Date check 
+// Add a Date on top of the clock
 var newDay = document.querySelector("#timeofday");
 var todayDay = new Date();
 var timeOfDay = todayDay.getHours();
