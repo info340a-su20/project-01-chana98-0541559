@@ -6,6 +6,7 @@ let error = document.querySelector("#error");
 let csv = 'sleep_advice.csv';
 let sleepAnalysis = d3.csv(csv)
     .then((response) => {
+      error.classList.add("d-none")
       state.sleepAnalysis = response;
     })
     .catch(() => {
