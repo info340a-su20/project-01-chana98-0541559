@@ -1,14 +1,14 @@
-Hours of Sleep,Rating,Advice,
-0,Poor,You need to sleep!,
-1,Poor,You are not sleeping nearly enough and you risk damaging your health. Catch up on sleep when you can!,
-2,Poor,You are not sleeping nearly enough and you risk damaging your health. Catch up on sleep when you can!,
-3,Poor,You are not sleeping nearly enough and you risk damaging your health. Catch up on sleep when you can!,
-4,Poor,You are not sleeping nearly enough and you risk damaging your health. Catch up on sleep when you can!,
-5,Fair,You need more sleep to function optimally. Try sleeping in a dark  cool room and limiting your exposure to light near bedtime.,
-6,Fair,You are almost getting enough sleep. If you are having trouble sleeping, try improving your sleep hygiene by turning off your electronics one hour before bed and using a blue light filter. 
-7,Good,You are getting enough sleep. Continue doing this by doing relaxing activities before bedtime and by setting a regular sleep schedule.,
-8,Great,You are getting good sleep. Continue doing this by avoiding naps and by not using stimulants close to bedtime.,
-9,Great,You are getting good sleep. Try to not exercise too close to bedtime to keep this up.,
-10,Good,You are sleeping a lot. Try setting your sleep to be in 6 90-minute sleep cycles instead of letting yourself sleep in.,
-11,Fair,You may be oversleeping. Try to avoid using substances that may cause you to sleep longer than necessary.,
-12,Poor,You are oversleeping. Try to increase your sleep quality and decrease your sleep quantity. ,
+Hours of Sleep,Rating,Advice
+0,Poor,You need to sleep!
+1,Poor,You are not sleeping nearly enough and you risk damaging your health. Catch up on sleep when you can!
+2,Poor,You are not sleeping nearly enough and you risk damaging your health. Catch up on sleep when you can!
+3,Poor,You are not sleeping nearly enough and you risk damaging your health. Catch up on sleep when you can!
+4,Poor,You are not sleeping nearly enough and you risk damaging your health. Catch up on sleep when you can!
+5,Fair,You need more sleep to function optimally. Try sleeping in a dark  cool room and limiting your exposure to light near bedtime.
+6,Fair,You are almost getting enough sleep. If you are having trouble sleeping  try improving your sleep hygiene by turning off your electronics one hour before bed and using a blue light filter. 
+7,Good,You are getting enough sleep. Continue doing this by doing relaxing activities before bedtime and by setting a regular sleep schedule.
+8,Great,You are getting good sleep. Continue doing this by avoiding naps and by not using stimulants close to bedtime.
+9,Great,You are getting good sleep. Try to not exercise too close to bedtime to keep this up.
+10,Good,You are sleeping a lot. Try setting your sleep to be in 6 90-minute sleep cycles instead of letting yourself sleep in.
+11,Fair,You may be oversleeping. Try to avoid using substances that may cause you to sleep longer than necessary.
+12,Poor,You are oversleeping. Try to increase your sleep quality and decrease your sleep quantity. 
