@@ -11,8 +11,8 @@ let sleepAnalysis = d3.csv(csv)
     })
     .catch(() => {
       error.innerHTML = "";
-      error.classList.add("alert-danger")
-      error.textContent = "Sleep Advice Not Loaded"
+      error.classList.add("alert-danger");
+      error.textContent = "Sleep Advice Not Loaded";
     });
 // Data stored in the website
 let state = {
@@ -45,12 +45,6 @@ function renderDetails() {
     }
     details.appendChild(summary);
     details.appendChild(advice);
-}
-
-// Initializes app message to fill out form
-let messageUpdate = document.querySelector('#sleepQuality');
-if (state.formLog.length == 0) {
-    messageUpdate.textContent = "Please fill out the form below!"
 }
 
 
@@ -111,6 +105,9 @@ form.addEventListener("submit", function (evt) {
 
     // Adding values to render
     state.formLog.push({ date: date.value, sleep: sleep.value, wakeup: wakeup.value, caf: yesCaf.checked, med: yesMed.checked, think: think.value, show: false, sleepTime: hourDiff });
+
+    // Sorts 
+
     // Clears values
     sleep.value = "";
     wakeup.value = "";
@@ -122,28 +119,6 @@ form.addEventListener("submit", function (evt) {
 
     // Renders the Logs
     renderLogs(state.formLog);
-});
-
-// Updates middle card to change message
-// Customizes middle card information based on last form entry
-form.addEventListener("submit", function (evt) {
-    evt.preventDefault();
-    let sleepQuality = document.querySelector("#sleepQuality");
-    let log = state.formLog[state.formLog.length - 1];
-
-    // display messages based on hours slept
-    let info = "You got around " + log.hourDiff + " hour(s) of sleep in your last entry."
-    if (log.hourDiff > 11) {
-        sleepQuality.style.color = "red";
-    } else if (log.hourDiff <= 11 && hourDiff > 8) {
-        sleepQuality.style.color = "orange";
-    } else if (log.hourDiff <= 8 && hourDiff >= 6) {
-        sleepQuality.style.color = "green";
-    } else { // hoursDiff < 6
-        sleepQuality.style.color = "red";
-    }
-    sleepQuality.textContent = info + state.sleepAnalysis[form.sleepTime>12?12:form.sleepTime].Advice;
-    messageUpdate.textContent = "You slept " + form.sleepTime + " hours last night. Click Details below for more information";
 });
 
 //  Search for a specific date
@@ -200,7 +175,6 @@ function renderLogs(formLog) {
     }
 
     // Prints out the logs
-    let i = 1;
     for (let form of formLog) {
         // Created a mainCard for each form
         let mainCard = document.createElement("div");
@@ -208,7 +182,7 @@ function renderLogs(formLog) {
 
         // Title
         let title = document.createElement("h4");
-        title.textContent = "Day " + i + ": On " + form.date + ", you slept from " + form.sleep + " to " + form.wakeup + ".";
+        title.textContent = "On " + form.date + ", you slept from " + form.sleep + " to " + form.wakeup + ".";
         mainCard.appendChild(title);
 
         // Adding Description
@@ -227,6 +201,5 @@ function renderLogs(formLog) {
         // Adding them to the Form Logs
         mainCard.appendChild(desc);
         logs.appendChild(mainCard);
-        i++;
     }
 }
