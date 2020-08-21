@@ -130,39 +130,20 @@ form.addEventListener("submit", function (evt) {
     evt.preventDefault();
     let sleepQuality = document.querySelector("#sleepQuality");
     let log = state.formLog[state.formLog.length - 1];
-    var sleepTime = +log.sleep.substring(0, 2);
-    var sleepMins = +log.sleep.substring(2);
-
-    // if minutes section is 30 or above, round up the hour
-    if (sleepMins >= 30) {
-        sleepTime++;
-    }
-    var wakeTime = +log.wakeup.substring(0, 2);
-    var wakeMins = +log.wakeup.substring(2);
-    if (wakeMins >= 30) {
-        wakeTime++;
-    }
-
-    // get the amount of hours slept
-    var hourDiff = Math.abs(sleepTime - wakeTime);
 
     // display messages based on hours slept
-    if (hourDiff > 11) {
-        sleepQuality.textContent = "You got around " + hourDiff + " hour(s) of sleep in your last entry. You are oversleeping!"
+    let info = "You got around " + log.hourDiff + " hour(s) of sleep in your last entry."
+    if (log.hourDiff > 11) {
         sleepQuality.style.color = "red";
-    } else if (hourDiff <= 11 && hourDiff > 8) {
-        sleepQuality.textContent = "You got around " + hourDiff + " hour(s) of sleep! You're getting a lot of sleep!"
+    } else if (log.hourDiff <= 11 && hourDiff > 8) {
         sleepQuality.style.color = "orange";
-    } else if (hourDiff <= 8 && hourDiff >= 6) {
-        sleepQuality.textContent = "You got around " + hourDiff + " hour(s) of sleep! You're getting the right amount of sleep!"
+    } else if (log.hourDiff <= 8 && hourDiff >= 6) {
         sleepQuality.style.color = "green";
-    } else if (hourDiff < 6) {
-        sleepQuality.textContent = "You got around " + hourDiff + " hour(s) of sleep! You need more sleep!"
-        sleepQuality.style.color = "red";
-    } else if (hourDiff == 0) {
-        sleepQuality.textContent = "You got " + hourDiff + " hours of sleep? You need to sleep!"
+    } else { // hoursDiff < 6
         sleepQuality.style.color = "red";
     }
+    sleepQuality.textContent = info + state.sleepAnalysis[form.sleepTime>12?12:form.sleepTime].Advice;
+    messageUpdate.textContent = "You slept " + form.sleepTime + " hours last night. Click Details below for more information";
 });
 
 //  Search for a specific date
@@ -238,9 +219,8 @@ function renderLogs(formLog) {
         });
         // If we want to show the form
         if (form.show) {
-            desc.textContent = "You did " + (form.caf ? "" : "not") + " drink caffeine and did " + (form.caf ? "" : "not") + " take medicine. " + (form.think.length == 0 ? "" : ("You thought you fell asleep in " + form.think + ".")) +  "Your sleep rating is " + sleepQual.Rating + ". " + sleepQual.Advice;
-            ;
             let sleepQual = state.sleepAnalysis[form.sleepTime>12?12:form.sleepTime];
+            desc.textContent = "You did " + (form.caf ? "" : "not") + " drink caffeine and did " + (form.caf ? "" : "not") + " take medicine. " + (form.think.length == 0 ? "" : ("You thought you fell asleep in " + form.think + ".")) +  "Your sleep rating is " + sleepQual.Rating + ". " + sleepQual.Advice;
             desc.classList.add("lightDesc");
         }
 
