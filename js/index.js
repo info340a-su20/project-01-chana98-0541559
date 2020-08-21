@@ -1,9 +1,23 @@
 'use strict';
 
+// Adding CSV for sleep data
+// Used some catching to see if csv file is not present
+let error = document.querySelector("#error")
+let csv = 'sleep_advice.csv'
+let sleepAnalysis = d3.csv(csv)
+    .then((response) => {
+      state.sleepAnalysis = response;
+    })
+    .catch(() => {
+      error.innerHTML = "";
+      error.classList.add("alert-danger")
+      error.textContent = "Sleep Advice Not Loaded"
+    });
 // Data stored in the website
 let state = {
     noInformation: "You have not put any information yet into the site! Please use the form to add new information",
-    formLog: []
+    formLog: [],
+    sleepAnalysis : sleepAnalysis
 }
 
 // Creates the popup at the very top once the details button is pressed
@@ -19,13 +33,16 @@ function renderDetails() {
     let details = document.querySelector("#moredetails");
     details.innerHTML = "";
     let summary = document.createElement("p");
+    let advice = document.createElement("p");
     if (state.formLog.length == 0) {
         summary.textContent = state.noInformation;
     } else {
         let log = state.formLog[state.formLog.length - 1];
         summary.textContent = "On " + log.date + ", You slept at " + log.sleep + " and woke up at " + log.wakeup + ". You had " + (log.med ? "" : "no") + " medications and " + (log.caff ? "" : "no") + " caffeine last night.";
+        advice.textContent = state.sleepAnalysis[log.sleepTime>12?12:log.sleepTime].Advice;
     }
     details.appendChild(summary);
+    details.appendChild(advice);
 }
 
 // Initializes app message to fill out form
@@ -72,8 +89,26 @@ form.addEventListener("submit", function (evt) {
     // Stopping from reloading page
     evt.preventDefault();
 
+    // adding sleep time
+    var sleepTime = +sleep.value.substring(0, 2);
+    var sleepMins = +sleep.value.substring(2);
+
+    // if minutes section is 30 or above, round up the hour
+    if (sleepMins >= 30) {
+        sleepTime++;
+    }
+    var wakeTime = +wakeup.value.substring(0, 2);
+    var wakeMins = +wakeup.value.substring(2);
+    if (wakeMins >= 30) {
+        wakeTime++;
+    }
+
+    // get the amount of hours slept
+    var hourDiff = Math.abs(sleepTime - wakeTime);
+    console.log(hourDiff)
+
     // Adding values to render
-    state.formLog.push({ date: date.value, sleep: sleep.value, wakeup: wakeup.value, caf: yesCaf.checked, med: yesMed.checked, think: think.value, show: false });
+    state.formLog.push({ date: date.value, sleep: sleep.value, wakeup: wakeup.value, caf: yesCaf.checked, med: yesMed.checked, think: think.value, show: false, sleepTime: hourDiff });
     // Clears values
     sleep.value = "";
     wakeup.value = "";
@@ -198,10 +233,11 @@ function renderLogs(formLog) {
             form.show = !form.show;
             renderLogs(formLog);
         });
-
         // If we want to show the form
         if (form.show) {
-            desc.textContent = "You did " + (form.caf ? "" : "not") + " drink caffeine and did " + (form.caf ? "" : "not") + " take medicine. " + (form.think.length == 0 ? "" : ("You thought you fell asleep in " + form.think + "."));
+            desc.textContent = "You did " + (form.caf ? "" : "not") + " drink caffeine and did " + (form.caf ? "" : "not") + " take medicine. " + (form.think.length == 0 ? "" : ("You thought you fell asleep in " + form.think + ".")) +  "Your sleep rating is " + sleepQual.Rating + ". " + sleepQual.Advice;
+            ;
+            let sleepQual = state.sleepAnalysis[form.sleepTime>12?12:form.sleepTime];
             desc.classList.add("lightDesc");
         }
 

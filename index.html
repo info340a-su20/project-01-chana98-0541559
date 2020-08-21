@@ -18,6 +18,7 @@
 <body>
     <header>
         <h1>Sleep Web App</h1>
+        <h1 id="error" class="alert alert-warning">Loading Sleep Data... Please Wait...</h1>
     </header>
     <main>
         <div id="opaque"></div>
@@ -109,7 +110,7 @@
         <section>
             <div class="container">
                 <h2>Your Sleep Log</h2>
-                <div id="Search">
+                <div id="Search" class="mb-3">
                     <div class="form-row form-text">
                         <label for="SearchDate">Search For Date:</label>
                         <input type="date" id="SearchDate" name="SearchDate">
@@ -131,7 +132,8 @@
             INFO340 Web Development Project
         </div>
     </footer>
-
+    <script src="https://d3js.org/d3-dsv.v1.min.js"></script>
+    <script src="https://d3js.org/d3-fetch.v1.min.js"></script>
     <script src="./js/index.js"></script>
 </body>
 
