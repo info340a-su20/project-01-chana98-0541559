@@ -2,8 +2,8 @@
 
 // Adding CSV for sleep data
 // Used some catching to see if csv file is not present
-let error = document.querySelector("#error")
-let csv = 'sleep_advice.csv'
+let error = document.querySelector("#error");
+let csv = 'sleep_advice.csv';
 let sleepAnalysis = d3.csv(csv)
     .then((response) => {
       state.sleepAnalysis = response;
@@ -29,6 +29,7 @@ showMore.addEventListener('click', function () {
 });
 
 // Rendering the Details for div element
+// gives advice based on time slept at
 function renderDetails() {
     let details = document.querySelector("#moredetails");
     details.innerHTML = "";
@@ -123,6 +124,7 @@ form.addEventListener("submit", function (evt) {
 });
 
 // Updates middle card to change message
+// Customizes middle card information based on last form entry
 form.addEventListener("submit", function (evt) {
     evt.preventDefault();
     let sleepQuality = document.querySelector("#sleepQuality");
@@ -145,16 +147,16 @@ form.addEventListener("submit", function (evt) {
 
     // display messages based on hours slept
     if (hourDiff > 11) {
-        sleepQuality.textContent = "You got around " + hourDiff + " hour(s) of sleep in your last entry. You are oversleeping! Try to increase your sleep quality and decrease your sleep quantity."
+        sleepQuality.textContent = "You got around " + hourDiff + " hour(s) of sleep in your last entry. You are oversleeping!"
         sleepQuality.style.color = "red";
     } else if (hourDiff <= 11 && hourDiff > 8) {
-        sleepQuality.textContent = "You got around " + hourDiff + " hour(s) of sleep! You're getting a lot of sleep! Just be mindful and try not to sleep too much."
+        sleepQuality.textContent = "You got around " + hourDiff + " hour(s) of sleep! You're getting a lot of sleep!"
         sleepQuality.style.color = "orange";
     } else if (hourDiff <= 8 && hourDiff >= 6) {
-        sleepQuality.textContent = "You got around " + hourDiff + " hour(s) of sleep! You're getting the right amount of sleep! Try to not exercise too close to bedtime to keep this up."
+        sleepQuality.textContent = "You got around " + hourDiff + " hour(s) of sleep! You're getting the right amount of sleep!"
         sleepQuality.style.color = "green";
     } else if (hourDiff < 6) {
-        sleepQuality.textContent = "You got around " + hourDiff + " hour(s) of sleep! You need more sleep! Try sleeping in a dark, cool room and limiting your exposure to light near bedtime."
+        sleepQuality.textContent = "You got around " + hourDiff + " hour(s) of sleep! You need more sleep!"
         sleepQuality.style.color = "red";
     } else if (hourDiff == 0) {
         sleepQuality.textContent = "You got " + hourDiff + " hours of sleep? You need to sleep!"
