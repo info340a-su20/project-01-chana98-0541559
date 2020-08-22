@@ -3,7 +3,7 @@
 // Adding CSV for sleep data
 // Used some catching to see if csv file is not present
 let error = document.querySelector("#error");
-let csv = 'sleep_advice.csv';
+let csv = "sleep_advice.csv";
 let sleepAnalysis = d3.csv(csv)
     .then((response) => {
       error.classList.add("d-none")
