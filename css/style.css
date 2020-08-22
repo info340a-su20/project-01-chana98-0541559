@@ -89,7 +89,7 @@ section {
 }
 
 .card, .card4 {
-  flex: 0 100 250px;
+  flex: 0 0 250px;
   background-color: white;
   margin: .5rem;
   border-radius: 10px;
@@ -286,15 +286,6 @@ div.card3 {
     margin: 5%;
   }
 }
-@media (max-width: 768px) {
-  .card {
-    display: none;
-  }
-  .card2 {
-    width: 100%;
-  }
-
-}
 @media (max-width: 1200px) {
   body {
     background-color: #C2DBBD;
@@ -304,5 +295,8 @@ div.card3 {
 @media (max-width: 1050px) {
   .card, .card4 {
     display: none;
+  }
+  .card2 {
+    width: 100%;
   }
 }
