@@ -14,10 +14,6 @@ body {
   height: inherit;
 }
 
-header h1 {
-  margin-left: 5%;
-  margin-right: 5%;
-}
 
 h1, h2, h3, h4, .card4 p {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -25,12 +21,17 @@ h1, h2, h3, h4, .card4 p {
   margin: 1rem;
 }
 
-h3 p {
-  margin-right: 10rem;
+h1, h2, h3 {
+  text-align: left;
 }
 
-h1, h2, h3, .card4 p {
-  text-align: left;
+header h1 {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+h3 p {
+  margin-right: 10rem;
 }
 
 h4 {
@@ -293,7 +294,7 @@ div.card3 {
 }
 
 @media (max-width: 1050px) {
-  .card, .card4, .column {
+  .card, .card4 {
     display: none;
   }
   .card2 {
