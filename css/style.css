@@ -282,12 +282,11 @@ div.card3 {
 
 /* Media Queries */
 @media (max-width: 598px) {
-  .card2 {
-    flex: 0 0 250px;
-  }
-
   .body {
     margin: 5%;
+  }
+  .card2 {
+    padding: 5%;
   }
 }
 @media (max-width: 768px) {
