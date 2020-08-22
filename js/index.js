@@ -4,6 +4,7 @@
 // Used some catching to see if csv file is not present
 let error = document.querySelector("#error");
 let csv = 'sleep_advice.csv';
+let d3;
 let sleepAnalysis = d3.csv(csv)
     .then((response) => {
       error.classList.add("d-none")
@@ -63,9 +64,6 @@ if (timeOfDay >= 5 && timeOfDay <= 12) {
 
 // Form Submission
 var form = document.querySelector("form");
-
-// Search for Date Submission
-var search = document.querySelector("#Search")
 
 // Taking in information from form
 let inputDate = document.querySelector("#SearchDate");
