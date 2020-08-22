@@ -30,16 +30,14 @@
             <div class="flex-container">
                 <div class="card">
                     <h4 id="timeofday"></h4>
-                    <p>Please fill out the form below to track your sleep. You can also select a previously recorded date 
-                        and view what you inputted.</p>
+                    <p>Record your sleep with our sleep log and track your overall sleep schedule with our form log at the bottom of the page!</p>
                 </div>
                 <div class="card2">
-                    <h4>Check your most recent log below:</h4>
-                    <button id="showMore" class="btn btn-primary dark btn-lg" aria-label="submit">Details</button>
+                    <h4>
+                        Check your most recent log! <button class="btn btn-primary dark" id="showMore">Details</button>
+                    </h4>
                     <div id="toggle" class="show">
-                        <div class="card3">
-                            <div id="moredetails">
-                            </div>
+                        <div id="moredetails">
                         </div>
                     </div>
                 </div>
@@ -101,6 +99,7 @@
                             <input type="text" id="Approx" name="Approx">
                         </div>
                         <button class="btn btn-primary dark">Submit</button>
+                        <p id="submitSuccess" class="alert d-none"></p>
                     </form>
                 </div>
             </div>
@@ -108,6 +107,7 @@
         <section>
             <div class="container">
                 <h2>Your Sleep Log</h2>
+                <p>Your Sleep Log keeps track of all your submitted entries and gives feedback regarding the number of hours you slept. Entries are ordered by the day that you put into the form. If you want to see more information, click on the logs for more information!</p>
                 <div id="Search" class="mb-3">
                     <div class="form-row form-text">
                         <label for="SearchDate">Search For Date:</label>

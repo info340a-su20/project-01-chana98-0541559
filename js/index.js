@@ -23,10 +23,13 @@ let state = {
 
 // Creates the popup at the very top once the details button is pressed
 let showMore = document.querySelector('#showMore');
+let details = false;
 showMore.addEventListener('click', function () {
     let show = document.querySelector('#toggle');
     renderDetails();
     show.classList.toggle("show");
+    details = !details;
+    showMore.textContent = details?"Hide Details":"Details";
 });
 
 // Rendering the Details for div element
@@ -78,9 +81,14 @@ let yesCaf = document.querySelector("#YesCaf");
 let noCaf = document.querySelector("#NoCaf");
 let think = document.querySelector("#Approx");
 
+let submitting = document.querySelector("#submitSuccess");
+
 form.addEventListener("submit", function (evt) {
     // Stopping from reloading page
     evt.preventDefault();
+    submitting.classList.remove("d-none");
+    submitting.textContent = "Loading Submission...";
+    submitting.classList.add("alert-warning");
 
     // adding sleep time
     var sleepTime = +sleep.value.substring(0, 2);
@@ -102,8 +110,7 @@ form.addEventListener("submit", function (evt) {
 
     // Adding values to render
     state.formLog.push({ date: date.value, sleep: sleep.value, wakeup: wakeup.value, caf: yesCaf.checked, med: yesMed.checked, think: think.value, show: false, sleepTime: hourDiff });
-
-    // Sorts 
+    state.formLog = state.formLog.sort((a, b) => {return new Date(a.date) - new Date(b.date)})
 
     // Clears values
     sleep.value = "";
@@ -116,6 +123,12 @@ form.addEventListener("submit", function (evt) {
 
     // Renders the Logs
     renderLogs(state.formLog);
+    submitting.classList.remove("d-none", "alert-warning");
+    submitting.textContent = "Added Sleep to Form Log. Please scroll below to see your sleep logs!";
+    submitting.classList.add("alert-success");
+    setTimeout(function() {
+        submitting.classList.add("d-none");
+    }, 3000);
 });
 
 //  Search for a specific date

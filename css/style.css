@@ -108,7 +108,7 @@ section {
     0 1px 3px rgba(0, 0, 0, 0.16),
     0 1px 3px rgba(0, 0, 0, 0.23);
   text-align: center;
-  padding-bottom: 2em;
+
 }
 
 div.card3 {
@@ -155,7 +155,7 @@ div.card3 {
 .container {
   background-color: white;
   border-radius: 10px;
-  padding: 5%;
+  padding: 3rem;
   width: 100%;
 }
 
@@ -175,7 +175,6 @@ div.card3 {
 
 .form-section {
   margin-bottom: 25px;
-  display: flex;
 }
 
 .form-section h2 {
@@ -185,6 +184,12 @@ div.card3 {
 .form-row {
   margin-bottom:25px;
   display: flex;
+}
+
+#submitSuccess {
+  margin-top: 1rem;
+  padding: 1rem 2rem 1rem 2rem;
+  border-radius: 5px;
 }
 
 /* Dark button */
@@ -239,6 +244,7 @@ div.card3 {
   margin-bottom: 2%;
   background-color: darkblue;
   color: white;
+  cursor: pointer;
   border-radius: 10px;
   padding: 2%;
   box-shadow: 
