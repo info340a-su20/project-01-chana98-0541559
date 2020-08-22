@@ -19,15 +19,22 @@ header h1 {
   margin-right: 5%;
 }
 
-h1, h2, h3, .card4 p {
+h1, h2, h3, h4, .card4 p {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-weight: 900;
   margin: 1rem;
-  text-align: left;
 }
 
 h3 p {
   margin-right: 10rem;
+}
+
+h1, h2, h3, .card4 p {
+  text-align: left;
+}
+
+h4 {
+  text-align: center;
 }
 
 /* Nav Bar Component */
@@ -82,7 +89,7 @@ section {
 }
 
 .card, .card4 {
-  flex: 0 0 250px;
+  flex: 0 100 250px;
   background-color: white;
   margin: .5rem;
   border-radius: 10px;
@@ -90,7 +97,6 @@ section {
     0 1px 3px rgba(0, 0, 0, 0.16),
     0 1px 3px rgba(0, 0, 0, 0.23);
   text-align: center;
-  padding-bottom: 2em;
 }
 
 .card2 {
@@ -116,24 +122,23 @@ div.card3 {
   text-align: center;
 }
 
-.card p, .card2 p, .card3 p, .card4 p {
+.card p {
+  text-align: center;
+}
+
+.card2 p, .card3 p, .card4 p {
   padding: .5rem 2rem;
   text-align: left;
 }
 
-.card img {
+.card2 img {
   width: 250px;
   height: 250px;
 }
 
-.card2 img {
-  width: 400px;
-  height: 400px;
-}
-
 .card4 img {
-  width: 150px;
-  height: 150px;
+  width: 75px;
+  height: 75px;
   padding: 5px;
 }
 
