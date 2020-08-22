@@ -285,13 +285,13 @@ div.card3 {
   .body {
     margin: 5%;
   }
-  .card2 {
-    padding: 5%;
-  }
 }
 @media (max-width: 768px) {
   .card {
     display: none;
+  }
+  .card2 {
+    width: 100%;
   }
 
 }
