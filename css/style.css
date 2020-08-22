@@ -293,7 +293,7 @@ div.card3 {
 }
 
 @media (max-width: 1050px) {
-  .card, .card4 {
+  .card, .card4, .column {
     display: none;
   }
   .card2 {
